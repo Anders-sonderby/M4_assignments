@@ -67,7 +67,7 @@ These files are used across multiple assignments:
 
 | File | Description | Notes |
 |---|---|---|
-| `M4_Assignment_4.ipynb` | Part A,B, C and D: Human HITL review of MAS output → creates `hitl_gold_final.csv` and comparative analysis of final tuned model| |
+| `M4_Assignment_4.ipynb` | Full Assignment 4 notebook. Part A&B and D: Human HITL review of MAS output → creates `hitl_gold_final.csv` and comparative analysis of final tuned model| |
 | `qlora_finetune.py` | Part C Step 1: QLoRA fine-tunes Mistral-7B-v0.1 on `train_silver.csv` (40k claims, 4-bit NF4, LoRA r=16) | Run as SLURM batch job on AAU AI-Lab |
 | `qlora_finetune.sh` | SLURM batch script for `qlora_finetune.py` | |
 | `qlora_eval_metrics.csv` | Eval loss and runtime metrics from QLoRA fine-tuning | |

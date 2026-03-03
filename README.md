@@ -42,11 +42,11 @@ These files are used across multiple assignments:
 
 | File | Description | Notes |
 |---|---|---|
-| `M4_assignment_2.ipynb` | Part A: Baseline classifier (frozen PatentSBERTa + Logistic Regression). Creates `patents_50k_green.parquet` | |
+| `M4_assignment_2.ipynb` | Part A: Creates `patents_50k_green.parquet` from ("AI-Growth-Lab/patents_claims_1.5m_traim_test", split="train") | |
 | `M4_Assignment_2-2.ipynb` | Part A: Generates PatentSBERTa embeddings (.pt files) | Run on Google Colab. Embedding .pt files not included in repo due to size |
-| `M4_Assignment_2-3.ipynb` | Part B & C: Uncertainty sampling → exports `hitl_green_100.csv`. LLM + Human HITL → creates `hitl_final_labaled.csv` and `hitl_gold_100.csv` | |
+| `M4_Assignment_2-3.ipynb` | Part A, B & C: Baseline classifier (frozen PatentSBERTa + Logistic Regression), Uncertainty sampling → exports `hitl_green_100.csv`. LLM + Human HITL → creates `hitl_final_labaled.csv` and `hitl_gold_100.csv` | |
 | `M4_Assignment_2-4.ipynb` | Part D: Fine-tunes PatentSBERTa on Silver + Gold. Creates `train_silver.csv` and `eval_silver.csv`. Evaluation metrics reported in notebook | Run on Google Colab |
-| `hitl_final_labaled.csv` | LLM suggestions + human final labels for the 100 high-risk claims (Assignment 2) | |
+| `hitl_final_labeled.csv` | LLM suggestions + human final labels for the 100 high-risk claims (Assignment 2) | |
 | `hitl_gold_100.csv` | Final gold labels from Assignment 2 HITL used for PatentSBERTa fine-tuning | |
 
 ---
@@ -55,7 +55,7 @@ These files are used across multiple assignments:
 
 | File | Description | Notes |
 |---|---|---|
-| `M4-Assignment_3.ipynb` | Full Assignment 3 notebook — sets up and runs the CrewAI 3-agent debate system | |
+| `M4-Assignment_3.ipynb` | Full Assignment 3 notebook — sets up and runs the CrewAI 3-agent debate system - Using Groq API and "groq/meta-llama/llama-4-scout-17b-16e-instruct" as model | |
 | `classified_results.csv` | Output from the CrewAI MAS — label + rationale for all 100 high-risk claims | |
 | `hitl_final.csv` | Final gold labels after human HITL review of the 100 claims (Assignment 3) | |
 | `finetune.py` | Fine-tunes PatentSBERTa on `train_silver.csv` + `hitl_final.csv`, evaluated on `eval_silver.csv` | |
@@ -67,7 +67,7 @@ These files are used across multiple assignments:
 
 | File | Description | Notes |
 |---|---|---|
-| `M4_Assignment_4.ipynb` | Part D: Human HITL review of MAS output → creates `hitl_gold_final.csv` | |
+| `M4_Assignment_4.ipynb` | Part A,B, C and D: Human HITL review of MAS output → creates `hitl_gold_final.csv` and comparative analysis of final tuned model| |
 | `qlora_finetune.py` | Part C Step 1: QLoRA fine-tunes Mistral-7B-v0.1 on `train_silver.csv` (40k claims, 4-bit NF4, LoRA r=16) | Run as SLURM batch job on AAU AI-Lab |
 | `qlora_finetune.sh` | SLURM batch script for `qlora_finetune.py` | |
 | `qlora_eval_metrics.csv` | Eval loss and runtime metrics from QLoRA fine-tuning | |
